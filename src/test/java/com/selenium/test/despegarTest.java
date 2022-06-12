@@ -1,5 +1,7 @@
 package com.selenium.test;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.files.driver.DriverFactory;
 
-public class despegarTest {
+public class DespegarTest {
 	WebDriver driver;
 	
 	@Test(description = "Actividad N°1")
@@ -26,7 +28,8 @@ public class despegarTest {
 		
 		//Elemetos
 		By byElement = By.cssSelector(".sbox5-box-container .sbox-places-destination--1xd0k");
-		WebDriverWait wait = new WebDriverWait (driver,1);
+		//WebDriverWait wait = new WebDriverWait (driver,1);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 		
 		WebElement alojamientos = driver.findElement(By.cssSelector(".shifu-3-button-circle.HOTELS"));
 		alojamientos.click();	
@@ -55,8 +58,8 @@ public class despegarTest {
 		fechaEntrada.click();	
 		//Thread.sleep(1000);
 		
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.sbox5-floating-tooltip-opened div.calendar-container div.-weekday:nth-child(6)")));
-		WebElement fechaSalida = driver.findElement(By.cssSelector("div.sbox5-floating-tooltip-opened div.calendar-container div.-weekday:nth-child(6)"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.sbox5-floating-tooltip-opened div.calendar-container div.-weekday:nth-child(26)")));
+		WebElement fechaSalida = driver.findElement(By.cssSelector("div.sbox5-floating-tooltip-opened div.calendar-container div.-weekday:nth-child(26)"));
 		fechaSalida.click();
 		//Thread.sleep(1000);	
 		
@@ -103,7 +106,8 @@ public class despegarTest {
 		//Validacion de un resultado
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".results-items-wrapper .results-cluster-container:nth-child(1) .accommodation-name-wrapper .accommodation-name")));
 		WebElement txtResultado = driver.findElement(By.cssSelector(".results-items-wrapper .results-cluster-container:nth-child(1) .accommodation-name-wrapper .accommodation-name"));
-		Assert.assertTrue(txtResultado.isDisplayed(),"Error");
+		Assert.assertTrue(txtResultado.isDisplayed(),"Error");		
+		
 		System.out.println("Texto encontrado = " + txtResultado.getText());
 		
 		driver.close();

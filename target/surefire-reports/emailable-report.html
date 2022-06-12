@@ -9,10 +9,20 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">SuiteQa</th></tr>
-<tr><td><a href="#t0">TestAlojamientosDespegar</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">11.315</td><td></td><td></td></tr>
+<tr><td><a href="#t0">TestAlojamientosDespegar</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">13.521</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">SuiteQa</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestAlojamientosDespegar &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.selenium.test.despegarTest</td><td><a href="#m0">actividad1Despegar</a></td><td rowspan="1">1654227330294</td><td rowspan="1">11288</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">SuiteQa</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestAlojamientosDespegar &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.selenium.test.despegarTest</td><td><a href="#m0">actividad1Despegar</a></td><td rowspan="1">1654716503555</td><td rowspan="1">13492</td></tr></tbody>
 </table>
-<h2>TestAlojamientosDespegar</h2><h3 id="m0">com.selenium.test.despegarTest#actividad1Despegar</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Abrir Navegador Chrome</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>TestAlojamientosDespegar</h2><h3 id="m0">com.selenium.test.despegarTest#actividad1Despegar</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Abrir Navegador Chrome</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: .results-items-wrapper .results-cluster-container:nth-child(1) .accommodation-name-wrapper .accommodation-name (tried for 1 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
+System info: host: &apos;DESKTOP-B2IFMI2&apos;, ip: &apos;192.168.100.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\Fabrizio\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65186}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65186/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2569055aca12aab2cc92f0a8a4524fb1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.selenium.test.despegarTest.actividad1Despegar(despegarTest.java:104)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
