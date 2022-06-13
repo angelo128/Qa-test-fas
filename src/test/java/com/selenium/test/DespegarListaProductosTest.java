@@ -1,19 +1,18 @@
 package com.selenium.test;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.files.driver.DriverFactory;
 
-import pageObjects.WikiHomePage;
+import pageObjects.DespegarHomePage;
 
-public class WikipediaTest {
+public class DespegarListaProductosTest 
+{
 	WebDriver driver = null;
-	WikiHomePage homePage = null;
+	DespegarHomePage homePage = null;
 	
 	@BeforeMethod
 	public void inicioTest(ITestContext context) 
@@ -21,21 +20,12 @@ public class WikipediaTest {
 		String navegadorTestSuite = context.getCurrentXmlTest().getParameter("Navegador");
 		String navegador = navegadorTestSuite != null ? navegadorTestSuite : "CHROME";
 		driver = DriverFactory.LevantaBrowser(this.driver, navegador, "https://www.despegar.com.ar/");
-	}	
+	}
 	
 	@Test
-	public void testWikipedia()
+	public void testListaProductos() throws Exception
 	{
-		homePage = new WikiHomePage(driver);
-		
-		Assert.assertTrue(homePage.textoBienvenida(), "Error no se muestra el texto de bienvenida");
-		driver.close();
+		homePage = new DespegarHomePage(driver);
+		homePage.recorrerListaProductos();
 	}
-	
-	@AfterMethod
-	public void finTest() 
-	{
-		driver.close();
-	}
-
 }
