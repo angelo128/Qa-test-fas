@@ -3,8 +3,13 @@
 <suite name="SuiteDespegar">
   <parameter name="Navegador" value="CHROME"></parameter>
   <test thread-count="5" name="TestDespegar">
+  	<groups>
+  		<run>
+  			<include name ="grupo_1"/>
+  		</run>
+  	</groups>
     <classes>
-      <class name="com.selenium.test.DespegarTest_v2"/>
+      <class name="com.selenium.test.DespegarTest_v2"/>      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

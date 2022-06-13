@@ -15,7 +15,7 @@ public class WikipediaTest {
 	WebDriver driver = null;
 	WikiHomePage homePage = null;
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void inicioTest(ITestContext context) 
 	{
 		String navegadorTestSuite = context.getCurrentXmlTest().getParameter("Navegador");
@@ -23,7 +23,7 @@ public class WikipediaTest {
 		driver = DriverFactory.LevantaBrowser(this.driver, navegador, "https://www.despegar.com.ar/");
 	}	
 	
-	@Test
+	@Test(groups = {"grupo_1"})
 	public void testWikipedia()
 	{
 		homePage = new WikiHomePage(driver);
@@ -32,7 +32,7 @@ public class WikipediaTest {
 		driver.close();
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void finTest() 
 	{
 		driver.close();

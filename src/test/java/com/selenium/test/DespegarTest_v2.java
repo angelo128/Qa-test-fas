@@ -20,7 +20,7 @@ public class DespegarTest_v2
 	DespegarAlojamientosPage paginaAlojamientos = null;
 	DespegarResultsPage paginaResultados = null;	
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void inicioTest(ITestContext context) 
 	{
 		String navegadorTestSuite = context.getCurrentXmlTest().getParameter("Navegador");
@@ -31,10 +31,10 @@ public class DespegarTest_v2
 	@DataProvider(name = "Data Provider Despegar")
 	public Object[][] dataProviderMethod()
 	{
-		return new Object[][] {{"Cordoba"}, {"Buenos Aires"}, {"Carlos Paz"}};
+		return new Object[][] {{"Cordoba"}, {"Buenos Aires"}, {"Carlos Paz"}};		
 	}
 	
-	@Test(dataProvider = "Data Provider Despegar", description = "Validar alojamientos segun destino")
+	@Test(groups = {"grupo_1"} , dataProvider = "Data Provider Despegar", description = "Validar alojamientos segun destino")
 	public void testDespegar(String textoDestino) throws Exception
 	{
 		homePage = new DespegarHomePage(driver);
@@ -53,7 +53,14 @@ public class DespegarTest_v2
 		Assert.assertTrue(paginaResultados.estaElPrimerResultado(), "No se encontraron resultados");		
 	}
 	
-	@AfterMethod
+	@Test(groups = {"grupo_1"}, description = "Validar funcionamiento botones de productos")
+	public void testListaProductos() throws Exception
+	{
+		homePage = new DespegarHomePage(driver);
+		homePage.recorrerListaProductos();
+	}
+	
+	@AfterMethod(alwaysRun=true)
 	public void finTest() 
 	{
 		driver.close();
