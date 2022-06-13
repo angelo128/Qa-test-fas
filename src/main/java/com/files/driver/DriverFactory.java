@@ -13,7 +13,7 @@ public class DriverFactory
 		CHROME, FIREFOX, EDGE
 	}
 	
-	public static WebDriver LevantaBrowser(WebDriver driver, String browserName, String url) 
+	public static WebDriver levantaBrowser(WebDriver driver, String browserName, String url) 
 	{
 		switch(browsers.valueOf(browserName))
 		{

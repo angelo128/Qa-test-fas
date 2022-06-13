@@ -25,7 +25,7 @@ public class DespegarTest_v2
 	{
 		String navegadorTestSuite = context.getCurrentXmlTest().getParameter("Navegador");
 		String navegador = navegadorTestSuite != null ? navegadorTestSuite : "CHROME";
-		driver = DriverFactory.LevantaBrowser(this.driver, navegador, "https://www.despegar.com.ar/");
+		driver = DriverFactory.levantaBrowser(this.driver, navegador, "https://www.despegar.com.ar/");
 	}		
 	
 	@DataProvider(name = "Data Provider Despegar")

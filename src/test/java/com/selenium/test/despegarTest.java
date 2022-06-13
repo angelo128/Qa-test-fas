@@ -24,7 +24,7 @@ public class DespegarTest {
 		driver.get("https://www.despegar.com.ar/");
 		driver.manage().window().maximize();*/
 		
-		driver = DriverFactory.LevantaBrowser(driver, "CHROME", "https://www.despegar.com.ar/");
+		driver = DriverFactory.levantaBrowser(driver, "CHROME", "https://www.despegar.com.ar/");
 		
 		//Elemetos
 		By byElement = By.cssSelector(".sbox5-box-container .sbox-places-destination--1xd0k");

@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -42,7 +41,7 @@ public class DespegarHomePage
 		for (WebElement elemento : listaElementos) 
 		{
 			WebElement iElemento = elemento.findElement(By.cssSelector(".button-circle-icon"));
-			Thread.sleep(5000);	
+			Thread.sleep(1000);	
 			iElemento.click();
 			Assert.assertTrue(iElemento.isDisplayed(), "El elemento no es visible");
 		}
